@@ -7,3 +7,7 @@ router = APIRouter()
 @router.get("/cep/{cep}", response_model=CepResponse)
 async def get_cep(cep: str):
     return await get_cep_info(cep)
+
+@router.get("/health")
+async def health_check():
+    return {"status": "ok"}

@@ -2,3 +2,5 @@ fastapi[standard]
 httpx
 pydantic
 python-dotenv
+pytest
+pytest-cov
