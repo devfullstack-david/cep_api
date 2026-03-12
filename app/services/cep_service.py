@@ -9,7 +9,6 @@ def normalize_cep(cep: str) -> str:
 
 def validate_cep(cep: str) -> bool:
     verified_cep_format = re.match(r"^\d{5}-\d{3}$", cep)
-    print("verified_cep_format", verified_cep_format)
     return bool(verified_cep_format)
 
 async def get_cep_info(cep: str) -> CepResponse | dict:
