@@ -49,7 +49,12 @@ app.add_middleware(
 async def set_secure_headers(request: Request, call_next):
     response = await call_next(request)
     secure_headers.set_headers(response)
+    if request.url.path in ["/docs", "/redoc"]:
+        if "content-security-policy" in response.headers:
+            del response.headers["content-security-policy"]
     return response
+
+
 
 
 app.include_router(router, prefix="/api/v1", tags=["CEP"])
