@@ -1,6 +1,9 @@
 fastapi[standard]
 httpx
 pydantic
+pydantic-settings
 python-dotenv
 pytest
 pytest-cov
+slowapi
+secure

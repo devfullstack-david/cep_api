@@ -1,17 +1,14 @@
-import os
-from dotenv import load_dotenv
-from app.exceptions.missing_key_env import MissingKeyEnvException
+from pydantic_settings import BaseSettings
+from functools import lru_cache
 
-load_dotenv()
 
-base_url_via_cep = os.getenv("VIA_CEP_API")
-base_url_brasil_api = os.getenv("BRASIL_API")
+class Settings(BaseSettings):
+    VIA_CEP_API: str
+    BRASIL_API: str
 
-if not base_url_via_cep:
-    raise MissingKeyEnvException("VIA_CEP_API")
+    model_config = {"env_file": ".env"}
 
-if not base_url_brasil_api:
-    raise MissingKeyEnvException("BRASIL_API")
 
-VIA_CEP_API = base_url_via_cep
-BRASIL_API = base_url_brasil_api
+@lru_cache
+def get_settings() -> Settings:
+    return Settings()
