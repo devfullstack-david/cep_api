@@ -1,61 +1,61 @@
 # CEP API
 
-Uma API minimalista, elegante e de alta performance para validação e consulta de CEPs brasileiros. Construída com as mais modernas tecnologias do ecossistema Python.
+A minimalist, elegant, and high-performance API for validating and consulting Brazilian CEPs (Postal Codes). Built with the most modern technologies from the Python ecosystem.
 
-## 🚀 Tecnologias
+## 🚀 Technologies
 
 - **Python 3**
-- **FastAPI** para o roteamento e performance.
-- **Pydantic** para validação estrita de dados.
-- **HTTPX** para consultas assíncronas às fontes de CEP.
-- **Pytest** para garantir a confiabilidade através de testes de cobertura.
+- **FastAPI** for routing and performance.
+- **Pydantic** for strict data validation.
+- **HTTPX** for asynchronous queries to CEP sources.
+- **Pytest** to ensure reliability through coverage testing.
 
-## ✨ Funcionalidades
+## ✨ Features
 
-- **Múltiplas Fontes**: Integração simultânea com *ViaCEP* e *Brasil API* para garantir maior disponibilidade e riqueza de dados.
-- **Dados Enriquecidos**: Retorna não apenas o endereço, mas também coordenadas geográficas (latitude/longitude), região, código IBGE e DDD.
-- **Validação Rigorosa**: Verifica o formato exato do CEP (`XXXXX-XXX` ou numérico) logo na entrada do request.
-- **Resiliência**: Tratamento de erros customizados devolvendo status codes HTTP padronizados (400, 404, 500).
+- **Multiple Sources**: Simultaneous integration with *ViaCEP* and *Brasil API* to ensure higher availability and richer data responses.
+- **Enriched Data**: Returns not only the address but also geographical coordinates (latitude/longitude), region, IBGE code, and DDD.
+- **Rigorous Validation**: Verifies the exact format of the CEP (`XXXXX-XXX` or numeric) right at the request entry level.
+- **Resilience**: Custom error handling returning standardized HTTP status codes (400, 404, 500).
 
-## 🛠️ Como executar
+## 🛠️ How to Run
 
-### 1. Pré-requisitos
-Certifique-se de ter o Python 3 instalado em sua máquina.
+### 1. Prerequisites
+Make sure you have Python 3 installed on your machine.
 
-### 2. Instalação e Ambiente Virtual
+### 2. Installation and Virtual Environment
 
 ```bash
-# Crie e ative o ambiente virtual (Windows)
+# Create and activate the virtual environment (Windows)
 python -m venv venv
 venv\Scripts\activate
 
-# Instale as dependências
+# Install dependencies
 pip install -r requirements.txt
 ```
 
-### 3. Rodando o servidor
+### 3. Running the Server
 
 ```bash
 fastapi dev app/main.py
 ```
 
-A API estará rodando em `http://127.0.0.1:8000`.
-A documentação interativa (Swagger UI) pode ser acessada em `http://127.0.0.1:8000/docs`.
+The API will be running at `http://127.0.0.1:8000`.
+Interactive documentation (Swagger UI) can be accessed at `http://127.0.0.1:8000/docs`.
 
-## 🧪 Testes
+## 🧪 Tests
 
-Para executar a rotina de testes e verificar a cobertura do código:
+To run the test suite and verify code coverage:
 
 ```bash
 pytest --cov=app
 ```
 
-## 📜 Licença
+## 📜 License
 
-Este projeto está licenciado sob a **[GNU General Public License v3.0](LICENSE.md)**. Sinta-se livre para usar, estudar, modificar e distribuir este software de acordo com as regras da licença.
+This project is licensed under the **[GNU General Public License v3.0](LICENSE.md)**. Feel free to use, study, modify, and distribute this software according to the license rules.
 
 ---
 
-## ✒️ Autor
+## ✒️ Author
 
-Desenvolvido por **David**.
+Developed by **David**.
